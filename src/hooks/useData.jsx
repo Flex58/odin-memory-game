@@ -8,8 +8,13 @@ export default function useData(
   const [dataArr, setDataArr] = useState([]);
   useEffect(() => {
     let raceConditionHandler = false;
+    const duplicateID = [];
     for (let i = 0; i < amount; i++) {
-      const id = getRandomNumber1025();
+      let id = getRandomNumber1025();
+      while (duplicateID.includes(id)) {
+        id = getRandomNumber1025();
+      }
+      duplicateID.push(id);
       fetch(url + id)
         .then((response) => response.json())
         .then((json) => {
