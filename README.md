@@ -13,3 +13,4 @@ Structure:
     -   Container Child of App?
     -   High Score Child of App?
     -   Current Score/High Score passed through app to respective components?
+    
