@@ -1,11 +1,10 @@
 # Memory Card Game  
 
 Todo:  
-
-   ~~-  Gather Pokemon from PokeApi, max ID to search for is 1025.~~
-    ~~-  Extract name and official artwork~~
     -   Create highscore function
     -   Card randomization function
+        ~~-  Gather Pokemon from PokeApi, max ID to search for is 1025.~~  
+        ~~-  Extract name and official artwork~~  
 
 Structure:  
 
