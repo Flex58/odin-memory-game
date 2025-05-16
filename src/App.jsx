@@ -15,7 +15,9 @@ function App() {
   const [pokemon, setPokemon] = useState([]);
 
   function clickHandler(id) {
-    shuffle(pokemon);
+    //fix this to not mutate but be more reactive
+    setPokemon(shuffle(pokemon));
+    //maybe break up function?
     if (!clickedPokemon.current.includes(id)) {
       clickedPokemon.current.push(id);
       setScore((prev) => {
