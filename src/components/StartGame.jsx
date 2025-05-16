@@ -1,4 +1,4 @@
-export default function StartGame({ onclick }) {
+export default function StartGame({ onClick }) {
   return (
     <>
       <h1>Pokemon Memory Game</h1>
@@ -8,7 +8,7 @@ export default function StartGame({ onclick }) {
         Pokemon you have already clicked, you lose! Try to increase your High
         Score!!
       </p>
-      <button type="button" onclick={onclick}>
+      <button type="button" onClick={onClick}>
         Start Game
       </button>
     </>

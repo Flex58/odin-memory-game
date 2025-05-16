@@ -19,19 +19,21 @@ function App() {
   const [pokemon, setPokemon] = useState([]);
 
   function clickHandler(id) {
-    setPokemon(shuffle(pokemon));
-    //maybe break up function?
-    if (!clickedPokemon.current.includes(id)) {
-      clickedPokemon.current.push(id);
-      setScore((prev) => {
-        const newScore = prev + 1;
-        if (newScore >= highScore) setHighScore(newScore);
-        if (newScore == pokemon.length) setGameOver(true);
-        return newScore;
-      });
-    } else {
-      clickedPokemon.current = [];
-      setGameOver(true);
+    if (!gameOver) {
+      setPokemon(shuffle(pokemon));
+      //maybe break up function?
+      if (!clickedPokemon.current.includes(id)) {
+        clickedPokemon.current.push(id);
+        setScore((prev) => {
+          const newScore = prev + 1;
+          if (newScore >= highScore) setHighScore(newScore);
+          if (newScore == pokemon.length) setGameOver(true);
+          return newScore;
+        });
+      } else {
+        clickedPokemon.current = [];
+        setGameOver(true);
+      }
     }
   }
 
@@ -53,7 +55,7 @@ function App() {
         </>
       ) : (
         <StartGame
-          onclick={() => {
+          onClick={() => {
             setShow(!show);
             setPokemon(initialPokemon);
           }}
