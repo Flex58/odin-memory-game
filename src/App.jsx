@@ -4,6 +4,8 @@ import CardContainer from "./components/CardContainer";
 import usePokemonArray from "./hooks/usePokemonArray";
 import shuffle from "./functions/shuffle";
 import GameOver from "./components/GameOver";
+import Score from "./components/Score";
+import StartGame from "./components/StartGame";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -30,27 +32,32 @@ function App() {
     } else {
       clickedPokemon.current = [];
       setGameOver(true);
-      setScore(0);
     }
   }
 
   return (
     <>
-      <button
-        onClick={() => {
-          setShow(!show);
-          setPokemon(initialPokemon);
-        }}
-      >
-        Button
-      </button>
-      {show && (
+      {show ? (
         <>
-          <p>Score: {score}</p>
-          <p>High Score: {highScore}</p>
+          <Score score={score} highScore={highScore} />
           <CardContainer pokemon={pokemon} clickHandler={clickHandler} />
-          <GameOver gameOver={gameOver} onClick={() => setGameOver(false)} />
+          <GameOver
+            gameOver={gameOver}
+            onClick={() => {
+              setGameOver(false);
+              setScore(0);
+            }}
+            score={score}
+            highScore={highScore}
+          />
         </>
+      ) : (
+        <StartGame
+          onclick={() => {
+            setShow(!show);
+            setPokemon(initialPokemon);
+          }}
+        />
       )}
     </>
   );
