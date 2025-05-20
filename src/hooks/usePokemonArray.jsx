@@ -3,7 +3,7 @@ import useData from "./useData";
 export default function usePokemonArray() {
   let arr = [];
   const data = useData();
-  data.map((item) => {
+  data.dataArr.map((item) => {
     arr = [
       ...arr,
       {

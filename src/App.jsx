@@ -40,7 +40,7 @@ function App() {
   return (
     <>
       {show ? (
-        <>
+        <div className="gameWrapper">
           <Score score={score} highScore={highScore} />
           <CardContainer pokemon={pokemon} clickHandler={clickHandler} />
           <GameOver
@@ -52,7 +52,7 @@ function App() {
             score={score}
             highScore={highScore}
           />
-        </>
+        </div>
       ) : (
         <StartGame
           onClick={() => {
