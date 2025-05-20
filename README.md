@@ -1,16 +1,4 @@
 # Memory Card Game  
 
-Todo:  
-
-    -   ~~Create highscore function~~
-    -  ~~Card randomization function~~
-    -  ~~Gather Pokemon from PokeApi, max ID to search for is 1025.~~  
-    -  ~~Extract name and official artwork~~  
-    - Styling  
-
-Structure:  
-
-    -   Card component nested in Card Container component? 
-    -   High Score Child of App?
-    -   Current Score/High Score passed through app to respective components?
-    
+Click as many unique cards in a row as you can!  
+If you click the same one twice you lose.  
