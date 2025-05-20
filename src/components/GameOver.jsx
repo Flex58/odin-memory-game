@@ -3,7 +3,7 @@ export default function GameOver({ gameOver, onClick, score, highScore }) {
     <>
       <dialog className="gameOver" open={gameOver}>
         <div>
-          <p>Game Over!</p>
+          <p className="overP">Game Over!</p>
           {score == 12 ? (
             <p>You win! Score: {score}</p>
           ) : (

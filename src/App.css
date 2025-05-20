@@ -58,6 +58,20 @@ dialog {
   transform: translateY(-50%);
   border: none;
   z-index: 1;
+  width: 100%;
+  background-color: #242424d5;
+  backdrop-filter: blur(5px);
+}
+
+.overP {
+  padding: 0;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+dialog p {
+  font-size: 1.4rem;
 }
 
 .backdrop {
